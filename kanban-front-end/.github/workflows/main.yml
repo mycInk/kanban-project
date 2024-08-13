@@ -1,0 +1,27 @@
+name: CI
+on:
+  push: 
+    branches: [main,master]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [20.x]
+    steps:
+      - uses: actions/checkout@v4
+      - name: install nodejs
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{matrix.node-version}}
+          cache: "npm"
+      - name: install deps
+        run: npm ci
+      - name: build app
+        run: npm run build --if-present
+      - name: deploy
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          ssh-key: ${{secrets.DEPLOY_KEY_OLD}}
+          folder: dist

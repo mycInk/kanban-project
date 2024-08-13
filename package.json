@@ -1,0 +1,30 @@
+{
+    "name": "kanban-project",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {},
+    "keywords": [],
+    "author": "myc_Ink",
+    "license": "MIT",
+    "workspaces": [
+        "kanban-front-end",
+        "kanban-back-end"
+    ],
+    "devDependencies": {
+        "@types/jest": "^29.5.12"
+    },
+    "dependencies": {
+        "@headlessui/react": "^2.1.2",
+        "@koa/cors": "^5.0.0",
+        "@midwayjs/passport": "^3.16.8",
+        "@midwayjs/upload": "^3.16.8",
+        "axios": "^1.7.3",
+        "headlessui": "^0.0.0",
+        "heroicons": "^2.1.5",
+        "jsonwebtoken": "^9.0.2",
+        "kanban-project": "file:",
+        "passport-github": "^1.1.0",
+        "types": "file:midwayjs/upload@3"
+    }
+}
